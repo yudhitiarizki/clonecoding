@@ -1,14 +1,76 @@
-import Kartu from "./Kartu"
+//  /$$$$$$                          /$$                          
+// /$$__  $$                        | $$                          
+// | $$  \__/  /$$$$$$  /$$$$$$/$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+// | $$ /$$$$ |____  $$| $$_  $$_  $$| $$__  $$ |____  $$ /$$__  $$
+// | $$|_  $$  /$$$$$$$| $$ \ $$ \ $$| $$  \ $$  /$$$$$$$| $$  \__/
+// | $$  \ $$ /$$__  $$| $$ | $$ | $$| $$  | $$ /$$__  $$| $$      
+// |  $$$$$$/|  $$$$$$$| $$ | $$ | $$| $$$$$$$/|  $$$$$$$| $$      
+//  \______/  \_______/|__/ |__/ |__/|_______/  \_______/|__/     
+// Import gambar kartu
+// Grup 1 (Normal, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
+import Gambar1 from "./Gambar1"
+// Grup 2 (xyz)
+import Gambar2 from "./Gambar2"
+// Grup 3 (dark synchro)
+import Gambar3 from "./Gambar3"
+// Grup 4 (Link)
+import Gambar4 from "./Gambar4"
+// Grup 5 (Spell, Trap)
+import Gambar5 from "./Gambar5"
+///////////////////////////////////////////////////////////////////
+
 import styled from "styled-components";
 import useInput from "../hooks/useInput"
+///////////////////////////////////////////////////////////////////
 
 const Form = () => {
+
+//    /$$$$$$   /$$                 /$$              
+//   /$$__  $$ | $$                | $$              
+//  | $$  \__//$$$$$$    /$$$$$$  /$$$$$$    /$$$$$$ 
+//  |  $$$$$$|_  $$_/   |____  $$|_  $$_/   /$$__  $$
+//   \____  $$ | $$      /$$$$$$$  | $$    | $$$$$$$$
+//   /$$  \ $$ | $$ /$$ /$$__  $$  | $$ /$$| $$_____/
+//  |  $$$$$$/ |  $$$$/|  $$$$$$$  |  $$$$/|  $$$$$$$
+//   \______/   \___/   \_______/   \___/   \_______/
+                                                  
+  // Gambar menyusul...
   const imagelink = "https://thiscatdoesnotexist.com/"
 
-  const [ title, onChangeHandlerTitle ] = useInput() 
-  const [ category, onChangeHandlerCategory ] = useInput()
-  const [ icon, onChangeHandlerIcon ] = useInput()
+  // Ada di semua (atas)
+  const [ name, onChangeHandlerName ] = useInput() 
+  const [ cardtype, onChangeHandlerCardType ] = useInput()
   const [ rarity, onChangeHandlerRarity ] = useInput()
+  //////////////////////////////////////// gambar sementara
+  const [ picture, onChangeHandlerPicture ] = useInput()
+  
+  // Ada di grup 1-4
+  const [ pendulum, onChangeHandlerPendulum ] = useInput()
+  const [ attribute, onChangeHandlerAttribute ] = useInput()
+  const [ monstertype, onChangeHandlerMonsterType ] = useInput()
+  const [ attack, onChangeHandlerAttack ] = useInput()
+  
+  // Ada di grup 1-3
+  // Grup 1 (Normal, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
+  // Grup 2 (xyz)
+  // Grup 3 (dark synchro)
+  const [ defense, onChangeHandlerDefense ] = useInput()
+  // Level gabung dengan rank dan negative level
+  const [ level, onChangeHandlerLevel ] = useInput()
+
+  // Grup 4 (Link)
+  //////////////////////////////////////////////////masih bingung gimana bentukannya
+  const [ linkarrows, onChangeHandlerLinkArrows ] = useInput()
+  
+  // Grup 5 (Spell, Trap)
+  const [ icon, onChangeHandlerIcon ] = useInput()
+  
+  // Menu pendulum
+  const [ bluescale, onChangeHandlerBlueScale ] = useInput()
+  const [ redscale, onChangeHandlerRedScale ] = useInput()
+  const [ pendulumeffect, onChangeHandlerPendulumEffect ] = useInput()
+  
+  // Ada di semua (bawah)
   const [ effect, onChangeHandlerEffect ] = useInput()
   const [ set1, onChangeHandlerSet1 ] = useInput()
   const [ set2, onChangeHandlerSet2 ] = useInput()
@@ -16,23 +78,24 @@ const Form = () => {
   const [ edition, onChangeHandlerEdition ] = useInput()
   const [ year, onChangeHandlerYear ] = useInput()
   const [ creator, onChangeHandlerCreator ] = useInput()
+//////////////////////////////////////////////////////////////////
 
   return (
     <StContainerLayout>
       <StContainerPage>
         <StContainerForm>
           <p>Title</p>
-          <input value={title} onChange={onChangeHandlerTitle}></input>
+          <input value={name} onChange={onChangeHandlerName}></input>
           
           <p>Category</p>
-          <select onChange={onChangeHandlerCategory}>
+          <select onChange={onChangeHandlerCardType}>
             <option value="Kosong">Kosong</option>
             <option value="magic">magic</option>
             <option value="trap">trap</option>
           </select>
 
           {/* Bagian Spell & Trap */}
-          <div style={{visibility: (category==="magic" || category==="trap") ? "visible" : "hidden"}}>
+          <div style={{visibility: (cardtype==="magic" || cardtype==="trap") ? "visible" : "hidden"}}>
             <p>Icon</p>
             <select onChange={onChangeHandlerIcon}>
               <option value="none">None</option>
@@ -81,10 +144,46 @@ const Form = () => {
           
         </StContainerForm>
         <StCardPage>
-          <Kartu
-            title={title}
+          <Gambar1
+            title={name}
             imagelink={imagelink}
-            category={category}
+            category={cardtype}
+            effect={effect}
+            icon={icon}
+            rarity={rarity}
+          />
+          <Gambar2
+            title={name}
+            imagelink={imagelink}
+            category={cardtype}
+            effect={effect}
+            icon={icon}
+            rarity={rarity}
+          />
+        </StCardPage>
+        <StCardPage>
+          <Gambar3
+            title={name}
+            imagelink={imagelink}
+            category={cardtype}
+            effect={effect}
+            icon={icon}
+            rarity={rarity}
+          />
+          <Gambar4
+            title={name}
+            imagelink={imagelink}
+            category={cardtype}
+            effect={effect}
+            icon={icon}
+            rarity={rarity}
+          />
+        </StCardPage>
+        <StCardPage>
+          <Gambar5
+            title={name}
+            imagelink={imagelink}
+            category={cardtype}
             effect={effect}
             icon={icon}
             rarity={rarity}
