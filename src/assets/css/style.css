@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.focus-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-image: url('https://www.cardmaker.net/uploads/monthly_2020_09/background-dark.jpg.9ed1602f99e278415f6728d63afa5b71.jpg');
+    background-position: 50% 50%;
+}
+
+.logo img {
+    height: 100px;
+}
+
+.focus-user {
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.focus-navbar {
+    padding: 8px 12px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #101820;
+    box-shadow: rgb(0 0 0 / 35%) 0px 1px 10px;
+}
+
+.focus-navbar nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.focus-navbar nav div {
+    font-size: 13.5px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    padding: 0px 18px;
+    margin-right: 8px;
+}
+
+.focus-navbar nav div:hover {
+    cursor: pointer;
+}
+
+.current-nav-item {
+    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, .2);
+    border-radius: 4px;
+}
+
+.focus-navbar nav div .fa-star {
+    color: rgb(247, 128, 17);
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.nav-item {
+    color: rgba(255, 255, 255, .65);
+    border-radius: 4px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.nav-item span {
+    font-size: 16px;
+    margin-right: 7px;
+}
+
+.nav-item .fa-caret-down {
+    margin-left: 7px;
+    margin-right: 0px;
+}
+
+.nav-item i {
+    margin-right: 7px;
+    font-size: 12px;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, .05);
+}
+
+.body-content {
+    background-color: rgb(21, 22, 23);
+    height: auto;
+    padding: 0 15px;
+}
+
+.focus-content {
+    padding: 10px 0;
+}
+
+.focus-precontent {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 38px;
+    background: rgb(57, 61, 70);
+    border: 0.1px solid rgb(100, 100, 100);
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.left-precontent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.precontent-home {
+    padding: 0 0px 0 18px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.precontent-home:hover{
+    cursor: pointer;
+}
+
+.arrow-border-container {
+    height: 38px;
+    width: 15px;
+    position: relative;
+    margin-left: 10px;
+    /* background-color: red; */
+}
+
+.box{
+    position: absolute;
+    left: 0;
+    height: 12px;
+    width: 25px;
+    border: 0.1px solid rgb(100, 100, 100);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0px -1px 0 0 rgb(21, 22, 23) inset;
+}
+
+.bottom-box {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.top-box{
+    bottom: 0;
+    transform: rotate(135deg);
+    z-index: 1;
+}
+
+.precontent-currentpage {
+    padding: 0 0 0 15px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.right-precontent {
+    color: rgb(255, 255, 255);
+    padding: 0 15px;
+    height: 38px;
+    border: 0.1px solid rgb(21, 22, 23);
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right-precontent:hover{
+    cursor: pointer;
+    background-color: rgba(255,255,255,.08);
+}
+
+.material-symbols-outlined{
+    font-size: 12px;
+    margin-right: 7px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.top-add{
+    margin: 0 auto 12px;
+    height: 90px;
+    width: 728px;
+    background-color: white;
+}
+
+.cardmaker-container{
+    background-color: rgb(45,48,55);
+    border: 1px solid rgba(218,230,243,.2);
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+.card-picture-container{
+    display: flex;
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+.side-add{
+    width: 300px;
+    height: 600px;
+    background-color: white;
+}

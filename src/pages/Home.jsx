@@ -1,12 +1,10 @@
 import React from "react";
+import Main from "../components/Main";
 
 function Home() {
   return (
-    <div>
-        <p>
-          Yuk Bisa Yu
-        </p>
-    </div>
+    <Main>
+    </Main>
   );
 }
 
