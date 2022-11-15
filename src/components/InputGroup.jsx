@@ -1,5 +1,7 @@
 import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/js/bootstrap';
 // import { useState } from 'react';
 
 const InputGroup = () => {
@@ -43,6 +45,16 @@ const InputGroup = () => {
             document.getElementById("level").style.display = 'flex';
         } else {
             document.getElementById("level").style.display = 'none';
+        }
+    }
+
+    const pendulumCheck = () => {
+        const onCheck = document.getElementById('pendulum-checkbox');
+
+        if (onCheck.checked) {
+            document.getElementById("bluered-scale").style.display = 'flex';
+        } else {
+            document.getElementById("bluered-scale").style.display = 'none';
         }
     }
 
@@ -92,8 +104,11 @@ const InputGroup = () => {
                         </select>
                     </div>
 
-                    <div className='right-input-style' id='pendulum'>
-                        <input type={'checkbox'} className='checkbox-style' />
+                    <div className='right-input-style2' id='pendulum'>
+                        <label className='custom-checkbox checkbox-style'>
+                            <input type='checkbox' id='pendulum-checkbox' onChange={pendulumCheck}/>
+                            <span className="checkmark"></span>
+                        </label>
                         <label className="pendulum-label">Pendulum</label>
                     </div>
                 </div>
@@ -126,24 +141,48 @@ const InputGroup = () => {
                     </div>
                 </div>
 
-                <div className='row-inputgroup' id='link-arrows'>
-                    <div className='field-label-container'>
+                <div className='row-inputgroup2' id='link-arrows'>
+                    <div className='field-label-container2'>
                         <label>Link Arrows</label>
                     </div>
                     <div className='link-arrows-container'>
                         <div className='link-arrows'>
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
+                            <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
+                            <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
                         </div>
                         <div className='link-arrows row-2'>
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
+                            <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
                         </div>
                         <div className='link-arrows'>
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
+                        <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
+                            <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
+                            <label className='custom-checkbox'>
+                                <input type='checkbox' />
+                                <span className="checkmark"></span>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -199,6 +238,17 @@ const InputGroup = () => {
                         <option value={11}>11</option>
                         <option value={12}>12</option>
                     </select>
+                </div>
+
+                <div className='row-inputgroup' id='bluered-scale' style={{'display':'none'}}>
+                    <div className='field-label-container'>
+                        <label>Blue Scale</label>
+                    </div>
+                    <input type={"text"} className='input-field blue-red-scale' />
+                    <div className='right-input-style'>
+                        <label className='right-input-label'>Red Scale</label>
+                        <input type={"text"} className='input-field blue-red-scale' />
+                    </div>
                 </div>
 
                 <div className='row-inputgroup'>

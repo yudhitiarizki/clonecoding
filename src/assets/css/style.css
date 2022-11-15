@@ -34,6 +34,7 @@ html, body{
 .focus-navbar {
     padding: 8px 12px;
     position: sticky;
+    z-index: 1;
     top: 0px;
     display: flex;
     align-items: center;
