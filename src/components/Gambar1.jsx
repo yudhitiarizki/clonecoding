@@ -1,7 +1,9 @@
+// Grup 1 (Normal, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
+
 import React, { useState, useEffect, useRef } from "react"
 import '../assets/css/style.css';
 
-const Kartu = ({
+const Gambar1 = ({
   category = "magic",
   effect = "blank cardLorem psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint o ",
   imagelink = "https://thiscatdoesnotexist.com/",
@@ -65,4 +67,4 @@ const Kartu = ({
   )
 }
 
-export default Kartu
+export default Gambar1
