@@ -98,28 +98,6 @@ const InputGroup = () => {
                     </div>
                 </div>
 
-                <div className='row-inputgroup' id='link-arrows'>
-                    <div className='field-label-container'>
-                        <label>Link Arrows</label>
-                    </div>
-                    <div className='link-arrows-container'>
-                        <div className='link-arrows'>
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                        </div>
-                        <div className='link-arrows row-2'>
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                        </div>
-                        <div className='link-arrows'>
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                            <input type={'checkbox'} className='checkbox-arrow' />
-                        </div>
-                    </div>
-                </div>
-
                 <div className='row-inputgroup' id='attribute-rarity'>
                     <div className='field-label-container'>
                         <label>Attribute</label>
@@ -145,6 +123,28 @@ const InputGroup = () => {
                             <option value='silver'>Silver</option>
                             <option value='gold'>Gold</option>
                         </select>
+                    </div>
+                </div>
+
+                <div className='row-inputgroup' id='link-arrows'>
+                    <div className='field-label-container'>
+                        <label>Link Arrows</label>
+                    </div>
+                    <div className='link-arrows-container'>
+                        <div className='link-arrows'>
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                        </div>
+                        <div className='link-arrows row-2'>
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                        </div>
+                        <div className='link-arrows'>
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                        </div>
                     </div>
                 </div>
 
