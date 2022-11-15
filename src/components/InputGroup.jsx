@@ -1,7 +1,31 @@
-import '../assets/css/style.css'
+import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
+// import { useState } from 'react';
 
 const InputGroup = () => {
+    // Aku udah buat sebagian state untuk inputnya, nanti buat redux tinggal di hilangin aja komennya
+    // const [cardtype, setCardType] = useState('link');
+
+    const cardtypeSelect = (event) => {
+        // setCardType(event.target.value);
+
+        const cardType = event.target.value;
+        if (cardType === 'spell' || cardType === 'trap') {
+            document.getElementById("icon").style.display = 'flex';
+            document.getElementById("pendulum").style.display = 'none';
+            document.getElementById("monster-type").style.display = 'none';
+            document.getElementById("atk-dev").style.display = 'none';
+            document.getElementById("attribute-rarity").style.display = 'none';
+            document.getElementById("rarity").style.display = 'flex';
+
+        } else {
+            document.getElementById("icon").style.display = 'none';
+            document.getElementById("pendulum").style.display = 'flex';
+            document.getElementById("attribute-rarity").style.display = 'flex';
+            document.getElementById("rarity").style.display = 'none';
+        }
+    }
+
     return (
         <div className='card-picture-container'>
             <div className="side-add"></div>
@@ -10,37 +34,51 @@ const InputGroup = () => {
                     <div className='field-label-container'>
                         <label>Name</label>
                     </div>
-                    <input type={"text"} className='input-field name-input' />
+                    <input type={"text"} name='name' className='input-field name-input' />
                 </div>
 
                 <div className='row-inputgroup'>
                     <div className='field-label-container'>
                         <label>Card Type</label>
                     </div>
-                    <select className='input-field select-style card-type-select'>
-                        <option>Link</option>
-                        <option>Efect</option>
-                        <option>Spell</option>
-                        <option>Xyz</option>
-                        <option>Normal</option>
-                        <option>Fusion</option>
-                        <option>Ritual</option>
-                        <option>Trap</option>
-                        <option>Synchro</option>
-                        <option>Dark Synchro</option>
-                        <option>Legendary Dragon</option>
-                        <option>Token</option>
-                        <option>Obelisk</option>
-                        <option>Ra</option>
-                        <option>Slifer</option>
+                    <select onChange={cardtypeSelect} name='card_type' className='input-field select-style card-type-select'>
+                        <option value='link'>Link</option>
+                        <option value='effect'>Efect</option>
+                        <option value='spell'>Spell</option>
+                        <option value='xyz'>Xyz</option>
+                        <option value='normal'>Normal</option>
+                        <option value='fusion'>Fusion</option>
+                        <option value='ritual'>Ritual</option>
+                        <option value='trap'>Trap</option>
+                        <option value='synchro'>Synchro</option>
+                        <option value='darkSynchro'>Dark Synchro</option>
+                        <option value='legendaryDragon'>Legendary Dragon</option>
+                        <option value='token'>Token</option>
+                        <option value='obelisk'>Obelisk</option>
+                        <option value='ra'>Ra</option>
+                        <option value='slifer'>Slifer</option>
                     </select>
-                    <div className='right-input-style'>
+
+                    <div className='right-input-style' id='icon' style={{ 'display': 'none' }}>
+                        <label className='right-input-label'>Icon</label>
+                        <select className='input-field select-style rarity-select'>
+                            <option value='none'>None</option>
+                            <option value='continuous'>Continuous</option>
+                            <option value='counter'>Counter</option>
+                            <option value='equip'>Equip</option>
+                            <option value='field'>Field</option>
+                            <option value='quick-play'>Quick-Play</option>
+                            <option value='ritual'>Ritual</option>
+                        </select>
+                    </div>
+
+                    <div className='right-input-style' id='pendulum'>
                         <input type={'checkbox'} className='checkbox-style' />
                         <label className="pendulum-label">Pendulum</label>
                     </div>
                 </div>
 
-                <div className='row-inputgroup'>
+                <div className='row-inputgroup' id='attribute-rarity'>
                     <div className='field-label-container'>
                         <label>Attribute</label>
                     </div>
@@ -61,31 +99,42 @@ const InputGroup = () => {
                     <div className='right-input-style'>
                         <label className='right-input-label'>Rarity</label>
                         <select className='input-field select-style rarity-select'>
-                            <option>Common</option>
-                            <option>Silver</option>
-                            <option>Gold</option>
+                            <option value='common'>Common</option>
+                            <option value='silver'>Silver</option>
+                            <option value='gold'>Gold</option>
                         </select>
                     </div>
                 </div>
 
-                <div className='row-inputgroup'>
+                <div className='row-inputgroup' id='rarity' style={{ 'display': 'none' }}>
+                    <div className='field-label-container'>
+                        <label>Rarity</label>
+                    </div>
+                    <select className='input-field select-style rarity-select'>
+                        <option value='common'>Common</option>
+                        <option value='silver'>Silver</option>
+                        <option value='gold'>Gold</option>
+                    </select>
+                </div>
+
+                <div className='row-inputgroup' style={{ 'display': 'none' }}>
                     <div className='field-label-container'>
                         <label>Level</label>
                     </div>
                     <select className='input-field select-style'>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
+                        <option value={0}>0</option>
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
+                        <option value={3}>3</option>
+                        <option value={4}>4</option>
+                        <option value={5}>5</option>
+                        <option value={6}>6</option>
+                        <option value={7}>7</option>
+                        <option value={8}>8</option>
+                        <option value={9}>9</option>
+                        <option value={10}>10</option>
+                        <option value={11}>11</option>
+                        <option value={12}>12</option>
                     </select>
                 </div>
 
@@ -96,7 +145,7 @@ const InputGroup = () => {
                     <input type={"file"} className='input-field upload-file' />
                 </div>
 
-                <div className='row-inputgroup'>
+                <div className='row-inputgroup' id='monster-type'>
                     <div className='field-label-container'>
                         <label>Monster Type</label>
                     </div>
@@ -110,7 +159,7 @@ const InputGroup = () => {
                     <input type={"text"} className='input-field effect-input' />
                 </div>
 
-                <div className='row-inputgroup'>
+                <div className='row-inputgroup' id='atk-dev'>
                     <div className='field-label-container'>
                         <label>ATK</label>
                     </div>
@@ -123,7 +172,7 @@ const InputGroup = () => {
 
                 <div className='row-inputgroup'>
                     <div className='field-label-container'>
-                        <label>SET</label>
+                        <label>Set</label>
                     </div>
                     <input type={"text"} className='input-field set-input' />
                     <div className='right-input-style'>
