@@ -63,7 +63,7 @@ const InputGroup = () => {
                     </div>
                     <select onChange={cardtypeSelect} name='card_type' className='input-field select-style card-type-select'>
                         <option value='link'>Link</option>
-                        <option value='effect'>Efect</option>
+                        <option value='effect'>Effect</option>
                         <option value='spell'>Spell</option>
                         <option value='xyz'>Xyz</option>
                         <option value='normal'>Normal</option>
