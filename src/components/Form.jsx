@@ -7,7 +7,7 @@
 // |  $$$$$$/|  $$$$$$$| $$ | $$ | $$| $$$$$$$/|  $$$$$$$| $$      
 //  \______/  \_______/|__/ |__/ |__/|_______/  \_______/|__/     
 // Import gambar kartu
-// Grup 1 (Normal, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
+// Grup 1 (Normal, Effect, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
 import Gambar1 from "./Gambar1"
 // Grup 2 (xyz)
 import Gambar2 from "./Gambar2"
@@ -21,6 +21,7 @@ import Gambar5 from "./Gambar5"
 
 import styled from "styled-components";
 import useInput from "../hooks/useInput"
+
 ///////////////////////////////////////////////////////////////////
 
 const Form = () => {
@@ -42,7 +43,7 @@ const Form = () => {
   const [ cardtype, onChangeHandlerCardType ] = useInput()
   const [ rarity, onChangeHandlerRarity ] = useInput()
   //////////////////////////////////////// gambar sementara
-  const [ picture, onChangeHandlerPicture ] = useInput()
+  // const [ picture, onChangeHandlerPicture ] = useInput()
   
   // Ada di grup 1-4
   const [ pendulum, onChangeHandlerPendulum ] = useInput()
@@ -83,30 +84,21 @@ const Form = () => {
   return (
     <StContainerLayout>
       <StContainerPage>
-        <StContainerForm>
-          <p>Title</p>
-          <input value={name} onChange={onChangeHandlerName}></input>
-          
-          <p>Category</p>
-          <select onChange={onChangeHandlerCardType}>
-            <option value="Kosong">Kosong</option>
-            <option value="magic">magic</option>
-            <option value="trap">trap</option>
-          </select>
-
-          {/* Bagian Spell & Trap */}
-          <div style={{visibility: (cardtype==="magic" || cardtype==="trap") ? "visible" : "hidden"}}>
-            <p>Icon</p>
-            <select onChange={onChangeHandlerIcon}>
-              <option value="none">None</option>
-              <option value="continuous">Continuous</option>
-              <option value="counter">Counter</option>
-              <option value="equip">Equip</option>
-              <option value="field">Field</option>
-              <option value="quick-play">Quick-Play</option>
-              <option value="ritual">Ritual</option>
+         <StContainerForm>
+          <StContainerHorizontal>
+          <p>Title :
+            <input value={name} onChange={onChangeHandlerName}></input>
+          </p>
+          <p>Category :
+            <select onChange={onChangeHandlerCardType}>
+              <option value="Kosong">Kosong</option>
+              <option value="spell">spell</option>
+              <option value="trap">trap</option>
             </select>
+          </p>
+          </StContainerHorizontal>
 
+          <StContainerHorizontal>
             <p>Rarity</p>
             <select onChange={onChangeHandlerRarity}>
               <option value="common">common</option>
@@ -116,41 +108,119 @@ const Form = () => {
 
             <p>Effect</p>
             <input value={effect} onChange={onChangeHandlerEffect}></input>
-
-            <StContainerHorizontal>
-              <p>Set1</p>
-              <input value={set1} onChange={onChangeHandlerSet1}></input>
-
-              <p>Set2</p>
-              <input value={set2} onChange={onChangeHandlerSet2}></input>
-            </StContainerHorizontal>
-
-            <StContainerHorizontal>
-              <p>Serial #</p>
-              <input value={serial} onChange={onChangeHandlerSerial}></input>
-
-              <p>Edition</p>
-              <input value={edition} onChange={onChangeHandlerEdition}></input>
-            </StContainerHorizontal>
+          </StContainerHorizontal>
             
-            <StContainerHorizontal>
-              <p>Year</p>
-              <input value={year} onChange={onChangeHandlerYear}></input>
-              
-              <p>Creator</p>
-              <input value={creator} onChange={onChangeHandlerCreator}></input>
-            </StContainerHorizontal>
-          </div>
-          
-        </StContainerForm>
-        <StCardPage>
+          <StContainerHorizontal>
+            <p>Set1</p>
+            <input value={set1} onChange={onChangeHandlerSet1}></input>
+
+            <p>Set2</p>
+            <input value={set2} onChange={onChangeHandlerSet2}></input>
+          </StContainerHorizontal>
+
+          <StContainerHorizontal>
+            <p>Serial #</p>
+            <input value={serial} onChange={onChangeHandlerSerial}></input>
+
+            <p>Edition</p>
+            <input value={edition} onChange={onChangeHandlerEdition}></input>
+          </StContainerHorizontal>
+            
+          <StContainerHorizontal>
+            <p>Year</p>
+            <input value={year} onChange={onChangeHandlerYear}></input>
+            
+            <p>Creator</p>
+            <input value={creator} onChange={onChangeHandlerCreator}></input>
+          </StContainerHorizontal>
+
+          <StContainerHorizontal>
+            <p>Icon
+            <select onChange={onChangeHandlerIcon}>
+              <option value="normal">Normal</option>
+              <option value="continuous">Continuous</option>
+              <option value="counter">Counter</option>
+              <option value="equip">Equip</option>
+              <option value="field">Field</option>
+              <option value="quickplay">Quick-Play</option>
+              <option value="ritual">Ritual</option>
+            </select>
+            </p>
+            <p>Attribute
+              <select onChange={onChangeHandlerAttribute}>
+                <option value="dark">Dark</option>
+                <option value="boss">Boss</option>
+                <option value="boss1">Boss1</option>
+                <option value="boss2">Boss2</option>
+                <option value="boss3">Boss3</option>
+                <option value="divine">Divine</option>
+                <option value="earth">Earth</option>
+                <option value="fire">Fire</option>
+                <option value="laugh">Laugh</option>
+                <option value="light">Light</option>
+                <option value="water">Water</option>
+                <option value="wind">Wind</option>
+              </select>
+            </p>
+            <p>Level
+              <select onChange={onChangeHandlerLevel}>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </p>
+          </StContainerHorizontal>
+            
+          <StContainerHorizontal>
+            <p>Monster Type</p>
+              <input value={monstertype} onChange={onChangeHandlerMonsterType}></input>
+            <p>Atk</p>
+              <input value={attack} onChange={onChangeHandlerAttack}></input>
+            <p>Defense</p>
+              <input value={defense} onChange={onChangeHandlerDefense}></input>
+          </StContainerHorizontal>
+
+          <StContainerHorizontal>
+            <p>Pendulum Effect</p>
+              <input value={pendulumeffect} onChange={onChangeHandlerPendulumEffect}></input>
+            <p>Blue Scale</p>
+              <input value={bluescale} onChange={onChangeHandlerBlueScale}></input>
+            <p>Red Scale</p>
+              <input value={redscale} onChange={onChangeHandlerRedScale}></input>
+          </StContainerHorizontal>
+        </StContainerForm> 
+          {/* <StCardPage>
           <Gambar1
-            title={name}
-            imagelink={imagelink}
-            category={cardtype}
-            effect={effect}
-            icon={icon}
+            name={name}
+            cardtype={cardtype}
             rarity={rarity}
+            // picture={picture}
+            attribute={attribute}
+            level={level}
+            monstertype={monstertype}
+            attack={attack}
+            defense={defense}
+            pendulum={pendulum}
+            pendulumeffect={pendulumeffect}
+            bluescale={bluescale}
+            redscale={redscale}
+            effect={effect}
+            set1={set1}
+            set2={set2}
+            serial={serial}
+            edition={edition}
+            year={year}
+            creator={creator}
           />
           <Gambar2
             title={name}
@@ -160,8 +230,8 @@ const Form = () => {
             icon={icon}
             rarity={rarity}
           />
-        </StCardPage>
-        <StCardPage>
+        </StCardPage> */}
+        {/* <StCardPage>
           <Gambar3
             title={name}
             imagelink={imagelink}
@@ -177,16 +247,22 @@ const Form = () => {
             effect={effect}
             icon={icon}
             rarity={rarity}
-          />
-        </StCardPage>
+          /> 
+        </StCardPage> */}
         <StCardPage>
           <Gambar5
-            title={name}
-            imagelink={imagelink}
-            category={cardtype}
-            effect={effect}
-            icon={icon}
+            name={name}
+            cardtype={cardtype}
             rarity={rarity}
+            // picture={picture}
+            icon={icon}
+            effect={effect}
+            set1={set1}
+            set2={set2}
+            serial={serial}
+            edition={edition}
+            year={year}
+            creator={creator}
           />
         </StCardPage>
       </StContainerPage> 
