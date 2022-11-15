@@ -1,5 +1,3 @@
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap';
 import InputGroup from './InputGroup';
 import '../assets/css/style.css'
 import '../assets/css/fontawesome.css';

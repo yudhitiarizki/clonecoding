@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -29,6 +34,7 @@
 .focus-navbar {
     padding: 8px 12px;
     position: sticky;
+    z-index: 1;
     top: 0px;
     display: flex;
     align-items: center;
@@ -222,21 +228,8 @@
     padding: 1rem;
 }
 
-.card-picture-container{
-    display: flex;
-    grid-gap: 1rem;
-    gap: 1rem;
-}
-
-.side-add{
-    width: 300px;
-    height: 600px;
-    background-color: white;
-}
-
 .canvas {
     width:100%;
     max-width:100%;
     height:100%; 
 }
-  

@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-picture-container {
+    display: flex;
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+.side-add {
+    width: 300px;
+    height: 600px;
+    background-color: white;
+}
+
+.inputgroup-container {
+    max-width: 500px;
+}
+
+.row-inputgroup {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.row-inputgroup2 {
+    margin: 1.4rem 0 2.4rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.field-label-container {
+    max-width: 120px;
+    min-width: 120px;
+    text-align: right;
+}
+
+.field-label-container2{
+    padding-top: 0.7rem;
+    max-width: 120px;
+    min-width: 120px;
+    text-align: right;
+}
+
+.field-label-container2 label{
+    padding-right: 1rem;
+    color: rgb(160, 174, 192);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.field-label-container label {
+    padding-right: 1rem;
+    color: rgb(160, 174, 192);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.input-field {
+    background-color: rgb(45, 48, 55);
+    border: 1px solid rgba(147, 157, 172, .4);
+    border-radius: 4px;
+    padding: 9px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .9);
+}
+
+.input-field:focus {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .9);
+    box-shadow: 0 0 3px 3px rgba(216, 216, 216, 0.4);
+}
+
+.input-field option {
+    background-color: white;
+    color: black;
+}
+
+.name-input {
+    width: 100%;
+    max-width: 350px;
+}
+
+.select-style:hover {
+    cursor: pointer;
+}
+
+.card-type-select {
+    max-width: 156px;
+}
+
+.link-arrows-container {
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+}
+
+.link-arrows {
+    width: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row-2 {
+    margin: 2.4rem 0;
+}
+
+.attribute-select {
+    max-width: 110px;
+}
+
+.rarity-select {
+    max-width: 99px;
+}
+
+.right-input-style {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right-input-style2{
+    display: flex;
+    flex-direction: row;
+}
+
+.right-input-style label {
+    color: rgb(160, 174, 192);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.custom-checkbox{
+    position: relative;
+    top: -3px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.custom-checkbox input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: rgb(63, 63, 63);
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 4px;
+}
+
+.custom-checkbox:hover input~.checkmark {
+    border: 1px solid rgba(255, 255, 255, .9);
+}
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: lightskyblue;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid rgb(45, 48, 55);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkbox-style {
+    margin-left: 16px;
+}
+
+.checkbox-arrow {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.pendulum-label {
+    margin-left: 32px;
+    color: rgb(160, 174, 192);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.right-input-label {
+    margin-right: 1rem;
+    margin-left: 16px;
+}
+
+.upload-file {
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.monster-type-creator {
+    width: 157px;
+}
+
+.effect-input {
+    width: 100%;
+}
+
+.atk-def-year {
+    max-width: 60px;
+}
+
+.set-input {
+    max-width: 76px;
+}
+
+.set-serial {
+    max-width: 96px;
+}
+
+.edition-input {
+    width: 100%;
+}
+
+.blue-red-scale{
+    width: 60px;
+}
