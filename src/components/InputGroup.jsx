@@ -21,8 +21,28 @@ const InputGroup = () => {
         } else {
             document.getElementById("icon").style.display = 'none';
             document.getElementById("pendulum").style.display = 'flex';
+            document.getElementById("monster-type").style.display = 'flex';
+            document.getElementById("atk-dev").style.display = 'flex';
             document.getElementById("attribute-rarity").style.display = 'flex';
             document.getElementById("rarity").style.display = 'none';
+        }
+
+        if (cardType === 'link') {
+            document.getElementById("link-arrows").style.display = 'flex';
+        } else {
+            document.getElementById("link-arrows").style.display = 'none';
+        }
+
+        if (cardType === 'xyz') {
+            document.getElementById("rank").style.display = 'flex';
+        } else {
+            document.getElementById("rank").style.display = 'none';
+        }
+
+        if (cardType !== 'spell' && cardType !== 'trap' && cardType !== 'link' && cardType !== 'xyz') {
+            document.getElementById("level").style.display = 'flex';
+        } else {
+            document.getElementById("level").style.display = 'none';
         }
     }
 
@@ -78,23 +98,45 @@ const InputGroup = () => {
                     </div>
                 </div>
 
+                <div className='row-inputgroup' id='link-arrows'>
+                    <div className='field-label-container'>
+                        <label>Link Arrows</label>
+                    </div>
+                    <div className='link-arrows-container'>
+                        <div className='link-arrows'>
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                        </div>
+                        <div className='link-arrows row-2'>
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                        </div>
+                        <div className='link-arrows'>
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                            <input type={'checkbox'} className='checkbox-arrow' />
+                        </div>
+                    </div>
+                </div>
+
                 <div className='row-inputgroup' id='attribute-rarity'>
                     <div className='field-label-container'>
                         <label>Attribute</label>
                     </div>
                     <select className='input-field select-style attribute-select'>
-                        <option>Dark</option>
-                        <option>Light</option>
-                        <option>Fire</option>
-                        <option>Earth</option>
-                        <option>Water</option>
-                        <option>Wind</option>
-                        <option>Laugh</option>
-                        <option>Divine</option>
-                        <option>Boss (Start)</option>
-                        <option>Boss (1)</option>
-                        <option>Boss (2)</option>
-                        <option>Boss (3)</option>
+                        <option value='dark'>Dark</option>
+                        <option value='light'>Light</option>
+                        <option value='fire'>Fire</option>
+                        <option value='earth'>Earth</option>
+                        <option value='water'>Water</option>
+                        <option value='wind'>Wind</option>
+                        <option value='laugh'>Laugh</option>
+                        <option value='divine'>Divine</option>
+                        <option value='boss (start)'>Boss (Start)</option>
+                        <option value='boss (1)'>Boss (1)</option>
+                        <option value='darkboss (2)'>Boss (2)</option>
+                        <option value='boss (3)'>Boss (3)</option>
                     </select>
                     <div className='right-input-style'>
                         <label className='right-input-label'>Rarity</label>
@@ -117,9 +159,30 @@ const InputGroup = () => {
                     </select>
                 </div>
 
-                <div className='row-inputgroup' style={{ 'display': 'none' }}>
+                <div className='row-inputgroup' id='level' style={{ 'display': 'none' }}>
                     <div className='field-label-container'>
                         <label>Level</label>
+                    </div>
+                    <select className='input-field select-style'>
+                        <option value={0}>0</option>
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
+                        <option value={3}>3</option>
+                        <option value={4}>4</option>
+                        <option value={5}>5</option>
+                        <option value={6}>6</option>
+                        <option value={7}>7</option>
+                        <option value={8}>8</option>
+                        <option value={9}>9</option>
+                        <option value={10}>10</option>
+                        <option value={11}>11</option>
+                        <option value={12}>12</option>
+                    </select>
+                </div>
+
+                <div className='row-inputgroup' id='rank' style={{ 'display': 'none' }}>
+                    <div className='field-label-container'>
+                        <label>Rank</label>
                     </div>
                     <select className='input-field select-style'>
                         <option value={0}>0</option>
