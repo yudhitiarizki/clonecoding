@@ -1,5 +1,5 @@
 // Grup 3 (dark synchro)
-// Grup 2 (xyz)
+
 import imagecardtype from '../assets/images/cardtype/index.js'
 import imageattribute from '../assets/images/attribute/index.js'
 import imageneglevel from '../assets/images/misc/neglevel.png';
