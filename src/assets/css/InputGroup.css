@@ -285,7 +285,7 @@ body {
 }
 
 .search2-input{
-    width: 325.77px;
+    width: 343.77px;
     padding: 2px 9px;
     background: none;
     border-left: none;
@@ -306,11 +306,12 @@ body {
 }
 
 .down-arrow{
-    width: 28px;
+    width: 36px;
     color: rgb(218,230,243);
     padding: 8px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .style-button{
@@ -344,4 +345,8 @@ body {
 
 .style-button i{
     margin-left: 0.5rem;
+}
+
+.dropdown-menu{
+    width: 220px;
 }
