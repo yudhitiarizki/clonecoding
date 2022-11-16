@@ -1,19 +1,7 @@
 // Group 5 (Spell, Trap)
-  
-// card type
-import normalspell from '../assets/images/cardtype/normalspell.jpeg';
-import typespell from '../assets/images/cardtype/typespell.jpeg';
-import normaltrap from '../assets/images/cardtype/normaltrap.jpeg';
-import typetrap from '../assets/images/cardtype/typetrap.jpeg';
-// icon
-import normal from '../assets/images/sticon/normal.png';
-import continuous from '../assets/images/sticon/continuous.png';
-import counter from '../assets/images/sticon/counter.png';
-import equip from '../assets/images/sticon/equip.png';
-import field from '../assets/images/sticon/field.png';
-import quickplay from '../assets/images/sticon/quickplay.png';
-import ritual from '../assets/images/sticon/ritual.png';
-///////////////////////////////////////////////////////////////////
+
+import imagecardtype from '../assets/images/cardtype/index.js'
+import imagesticon from '../assets/images/sticon/index.js'
 import React, { useState, useEffect, useRef } from "react"
 import '../assets/css/style.css';
 
@@ -22,7 +10,7 @@ const Gambar5 = ({
   cardtype= "spell",
   rarity= "common",
   picture= "https://thiscatdoesnotexist.com/",
-  icon= "normal",
+  icon= "counter",
   effect= "",
   set1= "",
   set2= "",
@@ -31,7 +19,6 @@ const Gambar5 = ({
   year= "",
   creator= ""
 }) => {
-  
   // initial state
   const [image, setImage] = useState(null)
   const [backimage, setBackImage] = useState(null)
@@ -50,32 +37,32 @@ const Gambar5 = ({
     const backimagetemp = new Image();
     const iconimagetemp = new Image();
     if (icon === "normal" || icon === "") {
-      iconimagetemp.src = normal
+      iconimagetemp.src = imagesticon.normal
       iconimagetemp.onload = () => setIconImage(iconimagetemp)
       if (cardtype === "spell"){
-        backimagetemp.src = normalspell
+        backimagetemp.src = imagecardtype.imagecardtypest.normalspell
       } else if (cardtype === "trap"){
-        backimagetemp.src = normaltrap
+        backimagetemp.src = imagecardtype.imagecardtypest.normaltrap
       }
     } else {
       if (icon === "continuous") {
-        iconimagetemp.src = continuous
+        iconimagetemp.src = imagesticon.continuous
       } else if (icon === "counter") {
-        iconimagetemp.src = counter
+        iconimagetemp.src = imagesticon.counter
       } else if (icon === "equip") {
-        iconimagetemp.src = equip
+        iconimagetemp.src = imagesticon.equip
       } else if (icon === "field") {
-        iconimagetemp.src = field
+        iconimagetemp.src = imagesticon.field
       } else if (icon === "quickplay") {
-        iconimagetemp.src = quickplay
+        iconimagetemp.src = imagesticon.quickplay
       } else if (icon === "ritual") {
-        iconimagetemp.src = ritual
+        iconimagetemp.src = imagesticon.ritual
       }
       iconimagetemp.onload = () => setIconImage(iconimagetemp)
       if (cardtype === "spell"){
-        backimagetemp.src = typespell
+        backimagetemp.src = imagecardtype.imagecardtypest.typespell
       } else if (cardtype === "trap"){
-        backimagetemp.src = typetrap
+        backimagetemp.src = imagecardtype.imagecardtypest.typetrap
       }
     }
     backimagetemp.onload = () => setBackImage(backimagetemp)
