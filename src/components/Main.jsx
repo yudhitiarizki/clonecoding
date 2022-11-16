@@ -111,7 +111,7 @@ const Main = () => {
                                 <span>Privacy Policy</span>
                             </div>
                         </div>
-                        <div style={{ 'color': 'rgb(160, 174, 192)' }}>Powered by Invision Community</div>
+                        <div className='powered'>Powered by Invision Community</div>
                     </div>
                 </div>
             </div>

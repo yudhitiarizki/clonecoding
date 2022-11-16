@@ -326,3 +326,11 @@ html, body{
 .bottom-left-ips{
     margin-top: 5px;
 }
+
+.powered{
+    color: rgb(160, 174, 192);
+}
+
+.powered:hover{
+    cursor: pointer;
+}
