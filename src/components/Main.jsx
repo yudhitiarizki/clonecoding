@@ -104,17 +104,14 @@ const Main = () => {
                         </div>
                     </div>
                     <div className='footer-container'>
-                        <div className='bottom-ad'></div>
-                        <div className='ipslayout-container'>
-                            <div className='left-ipslayout'>
-                                <div><span className='span1'>IPS Theme</span> by <span className='span1'>IPSFocus</span></div>
-                                <div className='bottom-left-ips'>
-                                    <span className='span2'>Theme <i className="fa-solid fa-caret-down"></i></span>
-                                    <span>Privacy Policy</span>
-                                </div>
+                        <div className='left-ipslayout'>
+                            <div><span className='span1'>IPS Theme</span> by <span className='span1'>IPSFocus</span></div>
+                            <div className='bottom-left-ips'>
+                                <span className='span2'>Theme <i className="fa-solid fa-caret-down"></i></span>
+                                <span>Privacy Policy</span>
                             </div>
-                            <div style={{'color':'rgb(160, 174, 192)'}}>Powered by Invision Community</div>
                         </div>
+                        <div style={{ 'color': 'rgb(160, 174, 192)' }}>Powered by Invision Community</div>
                     </div>
                 </div>
             </div>

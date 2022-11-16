@@ -293,21 +293,10 @@ html, body{
 
 .footer-container{
     padding: 20px 0 154px 0;
-}
-
-.bottom-ad{
-    height: 280px;
-    width: 1200px;
-    margin: 0 auto 12px auto;
-    background-color: white;
-}
-
-.ipslayout-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1340px;
-    padding: 0 15px;
     font-size: 13px;
 }
 
