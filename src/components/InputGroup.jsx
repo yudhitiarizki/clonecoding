@@ -2,11 +2,12 @@ import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/js/bootstrap';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 const InputGroup = () => {
     // Aku udah buat sebagian state untuk inputnya, nanti buat redux tinggal di hilangin aja komennya
     // const [cardtype, setCardType] = useState('link');
+    const [footer, setFooter] = useState('This fan card was created at cardmaker.net');
 
     const cardtypeSelect = (event) => {
         // setCardType(event.target.value);
@@ -56,6 +57,10 @@ const InputGroup = () => {
         } else {
             document.getElementById("bluered-scale").style.display = 'none';
         }
+    }
+
+    const footerInput = (event) => {
+        setFooter(event.target.value);
     }
 
     return (
@@ -317,6 +322,12 @@ const InputGroup = () => {
                     </div>
                 </div>
 
+                <div className='row-inputgroup'>
+                    <div className='field-label-container'>
+                        <label>Footer</label>
+                    </div>
+                    <input type={"text"} value={footer} onChange={footerInput} className='input-field name-input' />
+                </div>
             </div>
 
             <div className="picture-container">

@@ -63,7 +63,7 @@ const Main = () => {
                             <span className="material-symbols-outlined">
                                 backup_table
                             </span>
-                            All Activity
+                            Unread Content
                         </div>
                     </div>
                     <div className='top-add'></div>
@@ -96,11 +96,17 @@ const Main = () => {
                             </div>
                             <div className='precontent-currentpage'>Yugioh Card Maker</div>
                         </div>
-                        <div className='right-precontent'>
-                            <span className="material-symbols-outlined">
-                                backup_table
-                            </span>
-                            All Activity
+                        <div className='right-precontent-box'>
+                            <div className='right-precontent'>
+                                <span className="material-symbols-outlined">
+                                    backup_table
+                                </span>
+                                Unread Content
+                            </div>
+                            <div className='right-precontent'>
+                                <i class="fa-solid fa-check"></i>
+                                Mark site read
+                            </div>
                         </div>
                     </div>
                     <div className='footer-container'>
