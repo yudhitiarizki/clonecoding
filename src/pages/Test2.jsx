@@ -1,4 +1,4 @@
-import Testgambar from '../components/Gambar1';
+import Testgambar from '../components/Gambar3';
 import React from "react";
 // import { useState } from 'react';
 

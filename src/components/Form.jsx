@@ -8,7 +8,7 @@
 //  \______/  \_______/|__/ |__/ |__/|_______/  \_______/|__/     
 // Import gambar kartu
 // Grup 1 (Normal, Effect, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
-import Gambar1 from "./Gambar1"
+// import Gambar1 from "./Gambar1"
 // // Grup 2 (xyz)
 // import Gambar2 from "./Gambar2"
 // // Grup 3 (dark synchro)
@@ -50,16 +50,15 @@ const Form = () => {
   const onChangeHandlerPendulum = (event) => {
     setPendulum(!pendulum)
   }
-
   const [ attribute, onChangeHandlerAttribute ] = useInput()
   const [ monstertype, onChangeHandlerMonsterType ] = useInput()
   const [ attack, onChangeHandlerAttack ] = useInput()
-  
+  const [ defense, onChangeHandlerDefense ] = useInput()
+
   // Ada di grup 1-3
   // Grup 1 (Normal, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
   // Grup 2 (xyz)
   // Grup 3 (dark synchro)
-  const [ defense, onChangeHandlerDefense ] = useInput()
   // Level gabung dengan rank dan negative level
   const [ level, onChangeHandlerLevel ] = useInput()
 
@@ -98,7 +97,7 @@ const Form = () => {
               <option value="Kosong">Kosong</option>
               {/* <option value="spell">spell</option>
               <option value="trap">trap</option> */}
-              <option value="normal">Normal</option>
+              {/* <option value="normal">Normal</option>
               <option value="effect">Effect</option>
               <option value="fusion">fusion</option>
               <option value="ritual">RItual</option>
@@ -106,7 +105,8 @@ const Form = () => {
               <option value="obelisk">obelisk</option>
               <option value="slifer">slifer</option>
               <option value="ra">ra</option>
-              <option value="token">token</option>
+            <option value="token">token</option> */}
+            <option value="link">Link</option>
             </select>
           </p>
           </StContainerHorizontal>
@@ -159,7 +159,7 @@ const Form = () => {
               <option value="ritual">Ritual</option>
             </select>
             </p> */}
-            <p>Attribute
+            {/* <p>Attribute
               <select onChange={onChangeHandlerAttribute}>
                 <option value="dark">Dark</option>
                 <option value="boss">Boss</option>
@@ -174,8 +174,8 @@ const Form = () => {
                 <option value="water">Water</option>
                 <option value="wind">Wind</option>
               </select>
-            </p>
-            <p>Level
+            </p> */}
+            {/* <p>Level
               <select onChange={onChangeHandlerLevel}>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -191,7 +191,7 @@ const Form = () => {
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select>
-            </p>
+            </p> */}
             {/* <input type="checkbox" onChange={onChangeHandlerPendulum}/> Pendulum */}
           </StContainerHorizontal>
             
@@ -214,7 +214,7 @@ const Form = () => {
           </StContainerHorizontal>
         </StContainerForm> 
           <StCardPage>
-          <Gambar1
+          {/* <Gambar1
             name={name}
             cardtype={cardtype}
             rarity={rarity}
@@ -229,13 +229,13 @@ const Form = () => {
             bluescale={bluescale}
             redscale={redscale}
             effect={effect}
-            // set1={set1}
-            // set2={set2}
-            // serial={serial}
-            // edition={edition}
-            // year={year}
-            // creator={creator}
-          />
+            set1={set1}
+            set2={set2}
+            serial={serial}
+            edition={edition}
+            year={year}
+            creator={creator}
+          /> */}
         </StCardPage>
         {/* <StCardPage>
           <Gambar5
