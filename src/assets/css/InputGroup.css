@@ -90,7 +90,7 @@ body {
 
 .name-input {
     width: 100%;
-    max-width: 350px;
+    max-width: 330px;
 }
 
 .select-style:hover {
@@ -256,4 +256,92 @@ body {
 
 .blue-red-scale{
     width: 60px;
+}
+
+.picture-container{
+    max-width: 451px;
+}
+
+.top-pc-container{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.searchbox2{
+    background-color: rgb(45,48,55);
+    border: 1px solid rgba(147, 157, 172, .4);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 38px;
+    width: 382.77px;
+}
+
+.searchbox2:hover{
+    cursor: pointer;
+}
+
+.search2-input{
+    width: 325.77px;
+    padding: 2px 9px;
+    background: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, .8);
+    outline: none;
+    cursor: pointer;
+    color: rgb(218,230,243);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.search2-input::placeholder{
+    font-style: italic;
+    font-weight: 500;
+    color: rgb(218,230,243);
+}
+
+.down-arrow{
+    width: 28px;
+    color: rgb(218,230,243);
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.style-button{
+    margin-left: 0.5rem;
+    height: 38px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(66,153,225);
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    border-radius: 0.25rem;
+}
+
+.style-button:hover{
+    background-color: rgb(35, 107, 165);
+    cursor: pointer;
+}
+
+.image-box{
+    width: 451px;
+    height: 658.3px;
+}
+
+.bottom-pc-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.style-button i{
+    margin-left: 0.5rem;
 }

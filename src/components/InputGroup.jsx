@@ -61,6 +61,7 @@ const InputGroup = () => {
     return (
         <div className='card-picture-container'>
             <div className="side-add"></div>
+
             <div className="inputgroup-container">
                 <div className='row-inputgroup'>
                     <div className='field-label-container'>
@@ -106,7 +107,7 @@ const InputGroup = () => {
 
                     <div className='right-input-style2' id='pendulum'>
                         <label className='custom-checkbox checkbox-style'>
-                            <input type='checkbox' id='pendulum-checkbox' onChange={pendulumCheck}/>
+                            <input type='checkbox' id='pendulum-checkbox' onChange={pendulumCheck} />
                             <span className="checkmark"></span>
                         </label>
                         <label className="pendulum-label">Pendulum</label>
@@ -171,7 +172,7 @@ const InputGroup = () => {
                             </label>
                         </div>
                         <div className='link-arrows'>
-                        <label className='custom-checkbox'>
+                            <label className='custom-checkbox'>
                                 <input type='checkbox' />
                                 <span className="checkmark"></span>
                             </label>
@@ -240,7 +241,7 @@ const InputGroup = () => {
                     </select>
                 </div>
 
-                <div className='row-inputgroup' id='bluered-scale' style={{'display':'none'}}>
+                <div className='row-inputgroup' id='bluered-scale' style={{ 'display': 'none' }}>
                     <div className='field-label-container'>
                         <label>Blue Scale</label>
                     </div>
@@ -317,7 +318,26 @@ const InputGroup = () => {
                 </div>
 
             </div>
-            <div className="picture-container"></div>
+
+            <div className="picture-container">
+                <div className="top-pc-container">
+                    <div className="searchbox2">
+                        <input type='text' placeholder='Search my cards...' className='search2-input' />
+                        <div className='down-arrow'><i class="fa-solid fa-angle-down"></i></div>
+                    </div>
+
+                    <button className='style-button'>Save</button>
+                </div>
+
+                <div className="image-box">
+                    <div style={{ 'backgroundColor': 'white', 'height': '658.3px' }}>{'Ganti <div> ini dengan gambar kartu'}</div>
+                </div>
+
+                <div className='bottom-pc-container'>
+                    <button className='style-button'>Download <i class="fa-solid fa-angle-down"></i></button>
+                    <button className='style-button'>Get share link <i class="fa-solid fa-angle-down"></i></button>
+                </div>
+            </div>
         </div>
     )
 }
