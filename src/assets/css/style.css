@@ -233,3 +233,104 @@ html, body{
     max-width:100%;
     height:100%; 
 }
+
+.bottom-link{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    color: rgb(218,230,243);
+    font-size: 13px;
+    padding: 15px 0;
+}
+
+.bottom-link:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.bottom-link i{
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.recentlybrowsing-box{
+    background: rgb(59,62,72);
+    padding: 16px 20px;
+    font-size: 14px;
+    border-radius: 4px 4px 0 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: rgba(147,157,172,0.15);
+    color: white;
+    font-weight: 700;
+}
+
+.recentlybrowsing-box span{
+    color: rgb(160, 174, 192);
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.username-list{
+    padding: 20px;
+    background-color: rgb(45,48,55);
+    margin-bottom: 10px;
+    color: rgb(218,230,243);
+    font-size: 14px;
+}
+
+.username-list span{
+    margin-right: 5px;
+}
+
+.username-list span:hover{
+    color: white;
+}
+
+.bottom-navbar{
+    margin-top: 20px;
+}
+
+.footer-container{
+    padding: 20px 0 154px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1340px;
+    font-size: 13px;
+}
+
+.left-ipslayout{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.left-ipslayout .span1{
+    text-decoration: underline;
+    text-decoration-color: rgb(100, 100, 100);
+}
+
+.left-ipslayout .span1:hover{
+    text-decoration-color: white;
+}
+
+.span2{
+    margin-right: 15px;
+}
+
+.left-ipslayout span:hover{
+    cursor: pointer;
+}
+
+.bottom-left-ips{
+    margin-top: 5px;
+}
+
+.powered{
+    color: rgb(160, 174, 192);
+}
+
+.powered:hover{
+    cursor: pointer;
+}
