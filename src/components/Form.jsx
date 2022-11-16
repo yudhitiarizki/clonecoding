@@ -9,16 +9,16 @@
 // Import gambar kartu
 // Grup 1 (Normal, Effect, Fusion, Ritual, Synchro, Legendary Dragon, Token, Obelisk, Slifer, Ra)
 import Gambar1 from "./Gambar1"
-// Grup 2 (xyz)
-import Gambar2 from "./Gambar2"
-// Grup 3 (dark synchro)
-import Gambar3 from "./Gambar3"
-// Grup 4 (Link)
-import Gambar4 from "./Gambar4"
-// Grup 5 (Spell, Trap)
-import Gambar5 from "./Gambar5"
+// // Grup 2 (xyz)
+// import Gambar2 from "./Gambar2"
+// // Grup 3 (dark synchro)
+// import Gambar3 from "./Gambar3"
+// // Grup 4 (Link)
+// import Gambar4 from "./Gambar4"
+// // Grup 5 (Spell, Trap)
+// import Gambar5 from "./Gambar5"
 ///////////////////////////////////////////////////////////////////
-
+import { useState } from "react"
 import styled from "styled-components";
 import useInput from "../hooks/useInput"
 
@@ -46,7 +46,11 @@ const Form = () => {
   // const [ picture, onChangeHandlerPicture ] = useInput()
   
   // Ada di grup 1-4
-  const [ pendulum, onChangeHandlerPendulum ] = useInput()
+  const [ pendulum, setPendulum] = useState(false)
+  const onChangeHandlerPendulum = (event) => {
+    setPendulum(!pendulum)
+  }
+
   const [ attribute, onChangeHandlerAttribute ] = useInput()
   const [ monstertype, onChangeHandlerMonsterType ] = useInput()
   const [ attack, onChangeHandlerAttack ] = useInput()
@@ -61,7 +65,7 @@ const Form = () => {
 
   // Grup 4 (Link)
   //////////////////////////////////////////////////masih bingung gimana bentukannya
-  const [ linkarrows, onChangeHandlerLinkArrows ] = useInput()
+  // const [ linkarrows, onChangeHandlerLinkArrows ] = useInput()
   
   // Grup 5 (Spell, Trap)
   const [ icon, onChangeHandlerIcon ] = useInput()
@@ -73,12 +77,12 @@ const Form = () => {
   
   // Ada di semua (bawah)
   const [ effect, onChangeHandlerEffect ] = useInput()
-  const [ set1, onChangeHandlerSet1 ] = useInput()
-  const [ set2, onChangeHandlerSet2 ] = useInput()
-  const [ serial, onChangeHandlerSerial ] = useInput()
-  const [ edition, onChangeHandlerEdition ] = useInput()
-  const [ year, onChangeHandlerYear ] = useInput()
-  const [ creator, onChangeHandlerCreator ] = useInput()
+  // const [ set1, onChangeHandlerSet1 ] = useInput()
+  // const [ set2, onChangeHandlerSet2 ] = useInput()
+  // const [ serial, onChangeHandlerSerial ] = useInput()
+  // const [ edition, onChangeHandlerEdition ] = useInput()
+  // const [ year, onChangeHandlerYear ] = useInput()
+  // const [ creator, onChangeHandlerCreator ] = useInput()
 //////////////////////////////////////////////////////////////////
 
   return (
@@ -92,8 +96,17 @@ const Form = () => {
           <p>Category :
             <select onChange={onChangeHandlerCardType}>
               <option value="Kosong">Kosong</option>
-              <option value="spell">spell</option>
-              <option value="trap">trap</option>
+              {/* <option value="spell">spell</option>
+              <option value="trap">trap</option> */}
+              <option value="normal">Normal</option>
+              <option value="effect">Effect</option>
+              <option value="fusion">fusion</option>
+              <option value="ritual">RItual</option>
+              <option value="legendarydragon">legendary dragon</option>
+              <option value="obelisk">obelisk</option>
+              <option value="slifer">slifer</option>
+              <option value="ra">ra</option>
+              <option value="token">token</option>
             </select>
           </p>
           </StContainerHorizontal>
@@ -110,32 +123,32 @@ const Form = () => {
             <input value={effect} onChange={onChangeHandlerEffect}></input>
           </StContainerHorizontal>
             
-          <StContainerHorizontal>
+          {/* <StContainerHorizontal>
             <p>Set1</p>
             <input value={set1} onChange={onChangeHandlerSet1}></input>
 
             <p>Set2</p>
             <input value={set2} onChange={onChangeHandlerSet2}></input>
-          </StContainerHorizontal>
+          </StContainerHorizontal> */}
 
-          <StContainerHorizontal>
+          {/* <StContainerHorizontal>
             <p>Serial #</p>
             <input value={serial} onChange={onChangeHandlerSerial}></input>
 
             <p>Edition</p>
             <input value={edition} onChange={onChangeHandlerEdition}></input>
-          </StContainerHorizontal>
+          </StContainerHorizontal> */}
             
-          <StContainerHorizontal>
+          {/* <StContainerHorizontal>
             <p>Year</p>
             <input value={year} onChange={onChangeHandlerYear}></input>
             
             <p>Creator</p>
             <input value={creator} onChange={onChangeHandlerCreator}></input>
-          </StContainerHorizontal>
+          </StContainerHorizontal> */}
 
           <StContainerHorizontal>
-            <p>Icon
+            {/* <p>Icon
             <select onChange={onChangeHandlerIcon}>
               <option value="normal">Normal</option>
               <option value="continuous">Continuous</option>
@@ -145,7 +158,7 @@ const Form = () => {
               <option value="quickplay">Quick-Play</option>
               <option value="ritual">Ritual</option>
             </select>
-            </p>
+            </p> */}
             <p>Attribute
               <select onChange={onChangeHandlerAttribute}>
                 <option value="dark">Dark</option>
@@ -179,6 +192,7 @@ const Form = () => {
                 <option value="12">12</option>
               </select>
             </p>
+            {/* <input type="checkbox" onChange={onChangeHandlerPendulum}/> Pendulum */}
           </StContainerHorizontal>
             
           <StContainerHorizontal>
@@ -199,57 +213,31 @@ const Form = () => {
               <input value={redscale} onChange={onChangeHandlerRedScale}></input>
           </StContainerHorizontal>
         </StContainerForm> 
-          {/* <StCardPage>
+          <StCardPage>
           <Gambar1
             name={name}
             cardtype={cardtype}
             rarity={rarity}
-            // picture={picture}
+            picture={imagelink}
             attribute={attribute}
             level={level}
             monstertype={monstertype}
             attack={attack}
             defense={defense}
-            pendulum={pendulum}
+            pendulum={true}
             pendulumeffect={pendulumeffect}
             bluescale={bluescale}
             redscale={redscale}
             effect={effect}
-            set1={set1}
-            set2={set2}
-            serial={serial}
-            edition={edition}
-            year={year}
-            creator={creator}
+            // set1={set1}
+            // set2={set2}
+            // serial={serial}
+            // edition={edition}
+            // year={year}
+            // creator={creator}
           />
-          <Gambar2
-            title={name}
-            imagelink={imagelink}
-            category={cardtype}
-            effect={effect}
-            icon={icon}
-            rarity={rarity}
-          />
-        </StCardPage> */}
+        </StCardPage>
         {/* <StCardPage>
-          <Gambar3
-            title={name}
-            imagelink={imagelink}
-            category={cardtype}
-            effect={effect}
-            icon={icon}
-            rarity={rarity}
-          />
-          <Gambar4
-            title={name}
-            imagelink={imagelink}
-            category={cardtype}
-            effect={effect}
-            icon={icon}
-            rarity={rarity}
-          /> 
-        </StCardPage> */}
-        <StCardPage>
           <Gambar5
             name={name}
             cardtype={cardtype}
@@ -264,7 +252,7 @@ const Form = () => {
             year={year}
             creator={creator}
           />
-        </StCardPage>
+        </StCardPage> */}
       </StContainerPage> 
     </StContainerLayout>
   ) 
