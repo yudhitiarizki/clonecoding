@@ -1,7 +1,7 @@
 import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
 // import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/js/bootstrap';
 import  React, { useState } from 'react';
 import nextId from "react-id-generator";
 import { useDispatch } from "react-redux";
@@ -12,7 +12,7 @@ import axios from 'axios';
 const InputGroup = () => {
     // Aku udah buat sebagian state untuk inputnya, nanti buat redux tinggal di hilangin aja komennya
     const [cardtype, setCardType] = useState('link');
-    const [footer, setFooter] = useState('This fan card was created at cardmaker.net');
+    // const [footer, setFooter] = useState('This fan card was created at cardmaker.net');
 
     const id = nextId();
     const dispatch = useDispatch()
@@ -109,9 +109,9 @@ const InputGroup = () => {
         }
     }
 
-    const footerInput = (event) => {
-        setFooter(event.target.value);
-    }
+    // const footerInput = (event) => {
+    //     setFooter(event.target.value);
+    // }
 
     const selectCard = () => {
         document.getElementById("searchmycards").placeholder = 'Card 1'; // Ubah card 1 pakai state
@@ -391,7 +391,7 @@ const InputGroup = () => {
                     <div className='field-label-container'>
                         <label>Footer</label>
                     </div>
-                    <input type={"text"} value={footer} onChange={footerInput} className='input-field name-input' />
+                    {/* <input type={"text"} value={footer} onChange={footerInput} className='input-field name-input' /> */}
                 </div>
             </div>
 
