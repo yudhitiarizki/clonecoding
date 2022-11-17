@@ -1,12 +1,14 @@
 import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
 // import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap';
-// import { useState } from 'react';
+import 'bootstrap/dist/js/bootstrap';
+import '../scss/custom.scss';
+import { useState } from 'react';
 
 const InputGroup = () => {
     // Aku udah buat sebagian state untuk inputnya, nanti buat redux tinggal di hilangin aja komennya
     // const [cardtype, setCardType] = useState('link');
+    const [footer, setFooter] = useState('This fan card was created at cardmaker.net');
 
     const cardtypeSelect = (event) => {
         // setCardType(event.target.value);
@@ -55,6 +57,25 @@ const InputGroup = () => {
             document.getElementById("bluered-scale").style.display = 'flex';
         } else {
             document.getElementById("bluered-scale").style.display = 'none';
+        }
+    }
+
+    const footerInput = (event) => {
+        setFooter(event.target.value);
+    }
+
+    const selectCard = () => {
+        document.getElementById("searchmycards").placeholder = 'Card 1'; // Ubah card 1 pakai state
+        document.getElementById("searchmycards").classList.remove('schi');
+        document.getElementById("searchmycards").classList = 'schi2'
+    }
+
+    const newCard = () => {
+        document.getElementById("searchmycards").placeholder = 'Search my cards...';
+
+        if (document.getElementById("searchmycards").className === 'schi2') {
+            document.getElementById("searchmycards").classList.remove('schi2');
+            document.getElementById("searchmycards").classList = 'schi';
         }
     }
 
@@ -317,16 +338,36 @@ const InputGroup = () => {
                     </div>
                 </div>
 
+                <div className='row-inputgroup'>
+                    <div className='field-label-container'>
+                        <label>Footer</label>
+                    </div>
+                    <input type={"text"} value={footer} onChange={footerInput} className='input-field name-input' />
+                </div>
             </div>
 
             <div className="picture-container">
                 <div className="top-pc-container">
-                    <div className="searchbox2">
-                        <input type='text' placeholder='Search my cards...' className='search2-input' />
-                        <div className='down-arrow'><i class="fa-solid fa-angle-down"></i></div>
+                    <div>
+                        <button className="searchbox2" id="dropdownMenuOffset3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,8">
+                            <input type='text' placeholder='Search my cards...' id='searchmycards' className='search2-input schi' />
+                            <div className='down-arrow'><i className="fa-solid fa-angle-down"></i></div>
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-custom2" aria-labelledby="dropdownMenuOffset3">
+                            <div><button className='style-button' onClick={newCard}>New Card</button></div>
+                            <li><hr className="dropdown-divider" /></li>
+                            <li><p className="dropdown-item disabled did" tabIndex="-1" aria-disabled="true">Saved</p></li>
+                            <li>
+                                <div className="dropdown-item di-custom" onClick={selectCard}>
+                                    Card 1
+                                    <button className='delete-btn'><i className="fa-solid fa-trash-can"></i></button>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
 
                     <button className='style-button'>Save</button>
+
                 </div>
 
                 <div className="image-box">
@@ -334,8 +375,24 @@ const InputGroup = () => {
                 </div>
 
                 <div className='bottom-pc-container'>
-                    <button className='style-button'>Download <i class="fa-solid fa-angle-down"></i></button>
-                    <button className='style-button'>Get share link <i class="fa-solid fa-angle-down"></i></button>
+                    <div>
+                        <button className='style-button' id="dropdownMenuOffset1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="-50,8">
+                            Download <i className="fa-solid fa-angle-down"></i>
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-custom1" aria-labelledby="dropdownMenuOffset1">
+                            <li><button className="dropdown-item"><i className="fa-solid fa-download"></i>Normal-Res</button></li>
+                            <li><button className="dropdown-item"><i className="fa-solid fa-download"></i>High-Res</button></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <button className='style-button' id="dropdownMenuOffset2" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="-40,8">
+                            Get share link <i className="fa-solid fa-angle-down"></i>
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-custom1" aria-labelledby="dropdownMenuOffset2">
+                            <li><span className="dropdown-item-text">Uploading...</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

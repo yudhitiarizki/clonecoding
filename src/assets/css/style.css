@@ -185,11 +185,16 @@ html, body{
     color: rgba(255, 255, 255, 0.6);
 }
 
+.right-precontent-box{
+    display: flex;
+    flex-direction: row;
+}
+
 .right-precontent {
     color: rgb(255, 255, 255);
     padding: 0 15px;
     height: 38px;
-    border: 0.1px solid rgb(21, 22, 23);
+    border-left: 0.1px solid rgb(21, 22, 23);
     border-top: none;
     border-bottom: none;
     border-right: none;
@@ -201,6 +206,10 @@ html, body{
 .right-precontent:hover{
     cursor: pointer;
     background-color: rgba(255,255,255,.08);
+}
+
+.right-precontent i{
+    margin-right: 7px;
 }
 
 .material-symbols-outlined{

@@ -192,10 +192,10 @@ body {
 }
 
 .custom-checkbox .checkmark:after {
-    top: 2px;
+    top: 3px;
     left: 6px;
-    width: 5px;
-    height: 10px;
+    width: 6px;
+    height: 11px;
     border: solid rgb(45, 48, 55);
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
@@ -228,6 +228,18 @@ body {
 .upload-file {
     padding: 0.5rem 1rem;
     width: 100%;
+}
+
+.upload-file::file-selector-button{
+    background-color: rgb(116, 116, 116);
+    border: none;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.upload-file::file-selector-button:hover{
+    background-color: rgb(128, 128, 128);
 }
 
 .monster-type-creator {
@@ -280,12 +292,16 @@ body {
     width: 382.77px;
 }
 
+.searchbox2:focus{
+    border: 1px solid rgb(66,153,225);
+}
+
 .searchbox2:hover{
     cursor: pointer;
 }
 
-.search2-input{
-    width: 325.77px;
+.search2-input, .schi, .schi2{
+    width: 343.77px;
     padding: 2px 9px;
     background: none;
     border-left: none;
@@ -299,18 +315,25 @@ body {
     font-weight: 500;
 }
 
-.search2-input::placeholder{
+.schi::placeholder{
     font-style: italic;
     font-weight: 500;
     color: rgb(218,230,243);
 }
 
+.schi2::placeholder{
+    font-style: normal;
+    font-weight: 500;
+    color: rgb(218,230,243);
+}
+
 .down-arrow{
-    width: 28px;
+    width: 36px;
     color: rgb(218,230,243);
     padding: 8px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .style-button{
@@ -344,4 +367,27 @@ body {
 
 .style-button i{
     margin-left: 0.5rem;
+}
+
+.fa-download{
+    margin-right: 10px;
+}
+
+.delete-btn{
+    display: none;
+    background: none;
+    border: none;
+}
+
+.di-custom:hover .delete-btn{
+    display: flex;
+    padding: 4px 6px;
+    color: rgba(255, 255, 255, .9);
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.di-custom:hover .delete-btn:hover{
+    background: rgb(199, 15, 15);
+    border-radius: 3px;
 }
