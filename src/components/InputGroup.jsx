@@ -1,13 +1,12 @@
 import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/js/bootstrap';
+import '../scss/custom.scss';
 import  React, { useState } from 'react';
 import nextId from "react-id-generator";
 import { useDispatch } from "react-redux";
 import { __createcards } from "../redux/modules/cardsSlices";
 import axios from 'axios';
-
 
 const InputGroup = () => {
     // Aku udah buat sebagian state untuk inputnya, nanti buat redux tinggal di hilangin aja komennya
