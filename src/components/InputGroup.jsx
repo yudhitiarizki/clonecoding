@@ -64,6 +64,21 @@ const InputGroup = () => {
         setFooter(event.target.value);
     }
 
+    const selectCard = () => {
+        document.getElementById("searchmycards").placeholder = 'Card 1'; // Ubah card 1 pakai state
+        document.getElementById("searchmycards").classList.remove('schi');
+        document.getElementById("searchmycards").classList = 'schi2'
+    }
+
+    const newCard = () => {
+        document.getElementById("searchmycards").placeholder = 'Search my cards...';
+
+        if (document.getElementById("searchmycards").className === 'schi2') {
+            document.getElementById("searchmycards").classList.remove('schi2');
+            document.getElementById("searchmycards").classList = 'schi';
+        }
+    }
+
     return (
         <div className='card-picture-container'>
             <div className="side-add"></div>
@@ -335,18 +350,18 @@ const InputGroup = () => {
                 <div className="top-pc-container">
                     <div>
                         <button className="searchbox2" id="dropdownMenuOffset3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,8">
-                            <input type='text' placeholder='Search my cards...' className='search2-input' />
+                            <input type='text' placeholder='Search my cards...' id='searchmycards' className='search2-input schi' />
                             <div className='down-arrow'><i className="fa-solid fa-angle-down"></i></div>
                         </button>
                         <ul className="dropdown-menu dropdown-menu-custom2" aria-labelledby="dropdownMenuOffset3">
-                            <div><button className='style-button'>New Card</button></div>
+                            <div><button className='style-button' onClick={newCard}>New Card</button></div>
                             <li><hr className="dropdown-divider" /></li>
-                            <li><p className="dropdown-item disabled did" tabindex="-1" aria-disabled="true">Saved</p></li>
+                            <li><p className="dropdown-item disabled did" tabIndex="-1" aria-disabled="true">Saved</p></li>
                             <li>
-                                <button className="dropdown-item di-custom">
-                                    <div>Card 1</div>
+                                <div className="dropdown-item di-custom" onClick={selectCard}>
+                                    Card 1
                                     <button className='delete-btn'><i className="fa-solid fa-trash-can"></i></button>
-                                </button>
+                                </div>
                             </li>
                         </ul>
                     </div>

@@ -292,11 +292,15 @@ body {
     width: 382.77px;
 }
 
+.searchbox2:focus{
+    border: 1px solid rgb(66,153,225);
+}
+
 .searchbox2:hover{
     cursor: pointer;
 }
 
-.search2-input{
+.search2-input, .schi, .schi2{
     width: 343.77px;
     padding: 2px 9px;
     background: none;
@@ -311,8 +315,14 @@ body {
     font-weight: 500;
 }
 
-.search2-input::placeholder{
+.schi::placeholder{
     font-style: italic;
+    font-weight: 500;
+    color: rgb(218,230,243);
+}
+
+.schi2::placeholder{
+    font-style: normal;
     font-weight: 500;
     color: rgb(218,230,243);
 }
