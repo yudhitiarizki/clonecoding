@@ -186,7 +186,7 @@ const Gambar1 = ({
       ctx.font = "bold 47px Times New Roman"
       ctx.fillStyle = "black"
       ctx.textAlign = "right"
-      ctx.fillText(attack, 950, 1887)
+      ctx.fillText(attack, 940, 1887)
       ctx.fillText(defense, 1200, 1887)
       
       // set1 and set2 font settings
@@ -277,7 +277,7 @@ const Gambar1 = ({
       ctx.font = "bold 47px Times New Roman"
       ctx.fillStyle = "black"
       ctx.textAlign = "right"
-      ctx.fillText(attack, 950, 1887)
+      ctx.fillText(attack, 940, 1887)
       ctx.fillText(defense, 1200, 1887)
       
       // set1 and set2 font settings
