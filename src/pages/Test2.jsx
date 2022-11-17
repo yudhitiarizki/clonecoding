@@ -10,11 +10,22 @@ function Test2() {
   //   setTest(!test)
   // }
 
+  let linkarrow={
+    NW:true,
+    NN:true,
+    NE:true,
+    EE:true,
+    SE:true,
+    SS:true,
+    SW:true,
+    WW:true,
+  }
+
   return (
     <div>
-      <Testgambar/>
+      <Testgambar linkarrow={linkarrow}/>
       {/* <input type="checkbox" onChange={onChangeHandler}/> Ayam */}
-      
+      {/* {console.log(Object.values(linkarrows).reduce((a, linkarrow) => a + linkarrow, 0))} */}
     </div>
   );
 }

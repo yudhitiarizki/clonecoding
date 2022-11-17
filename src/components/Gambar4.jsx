@@ -2,22 +2,30 @@
 
 import imagecardtype from '../assets/images/cardtype/index.js'
 import imageattribute from '../assets/images/attribute/index.js'
-import imageneglevel from '../assets/images/misc/neglevel.png';
+import imagelinkarrow from '../assets/images/linkarrow/index.js'
 import React, { useState, useEffect, useRef} from "react"
 import '../assets/css/style.css';
 
-const Gambar3 = ({
+const Gambar4 = ({
   name= "Test Name",
-  cardtype= "darksynchro",
+  cardtype= "link",
   rarity= "common",
   picture= "https://thiscatdoesnotexist.com/",
   effect= "Working on clone coding",
   attribute="earth",
-  neglevel="12",
+  linkarrow={
+    NW:false,
+    NN:false,
+    NE:false,
+    EE:false,
+    SE:false,
+    SS:false,
+    SW:false,
+    WW:false,
+  },
   monstertype="DEVELOPER/EFFECT",
-  attack="1",
-  defense="1",
-  pendulum=false,
+  attack="1000",
+  pendulum=true,
   pendulumeffect="",
   bluescale="1",
   redscale="8",
@@ -31,12 +39,20 @@ const Gambar3 = ({
   
   // initial state
   const [image, setImage] = useState(null)
-  const [neglevelimage, setNegLevelImage] = useState(null)
   const [backimage, setBackImage] = useState(null)
   const [attributeimage, setAttributeImage] = useState(null)
   const canvas = useRef(null)
-  let iter = 0
-
+  
+  // link arrow
+  const [NW, setNW] = useState(null)
+  const [NN, setNN] = useState(null)
+  const [NE, setNE] = useState(null)
+  const [EE, setEE] = useState(null)
+  const [SE, setSE] = useState(null)
+  const [SS, setSS] = useState(null)
+  const [SW, setSW] = useState(null)
+  const [WW, setWW] = useState(null)
+  
   // Preparing image
   useEffect(() => {
     const imagetemp = new Image();
@@ -44,20 +60,58 @@ const Gambar3 = ({
     imagetemp.onload = () => setImage(imagetemp)
   }, [picture])
 
-  // Preparing Negative Level
+  // Preparing linkarrow
   useEffect(() => {
-    const neglevelimagetemp = new Image();
-    neglevelimagetemp.src = imageneglevel
-    neglevelimagetemp.onload = () => setNegLevelImage(neglevelimagetemp)
-  })
+    if (linkarrow.NW){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.NW
+      imagelinkarrowtemp.onload = () => setNW(imagelinkarrowtemp)
+    }
+    if (linkarrow.NN){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.NN
+      imagelinkarrowtemp.onload = () => setNN(imagelinkarrowtemp)
+    }
+    if (linkarrow.NE){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.NE
+      imagelinkarrowtemp.onload = () => setNE(imagelinkarrowtemp)
+    }
+    if (linkarrow.EE){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.EE
+      imagelinkarrowtemp.onload = () => setEE(imagelinkarrowtemp)
+    }
+    if (linkarrow.SE){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.SE
+      imagelinkarrowtemp.onload = () => setSE(imagelinkarrowtemp)
+    }
+    if (linkarrow.SS){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.SS
+      imagelinkarrowtemp.onload = () => setSS(imagelinkarrowtemp)
+    }
+    if (linkarrow.SW){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.SW
+      imagelinkarrowtemp.onload = () => setSW(imagelinkarrowtemp)
+    }
+    if (linkarrow.WW){
+      const imagelinkarrowtemp = new Image();
+      imagelinkarrowtemp.src = imagelinkarrow.WW
+      imagelinkarrowtemp.onload = () => setWW(imagelinkarrowtemp)
+    }
+  }, [linkarrow])
+
 
   // Preparing template card
   useEffect(() => {
     const backimagetemp = new Image();
     if (pendulum === false) {
-      backimagetemp.src = imagecardtype.imagecardtypemonster.darksynchro
+      backimagetemp.src = imagecardtype.imagecardtypemonster.link
     } else if (pendulum === true){
-      backimagetemp.src = imagecardtype.imagecardtypemonster.darksynchrop  
+      backimagetemp.src = imagecardtype.imagecardtypemonster.linkp  
     }
     backimagetemp.onload = () => setBackImage(backimagetemp)
   }, [pendulum])
@@ -95,7 +149,7 @@ const Gambar3 = ({
 
   // Generating card image
   useEffect(() => {
-    if( canvas && image && backimage && attributeimage && neglevelimage && (pendulum === false || pendulum === "")) {
+    if( canvas && image && backimage && attributeimage && (pendulum === false || pendulum === "")) {
       const ctx = canvas.current.getContext("2d") 
       // emptying canvas
       ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -105,11 +159,33 @@ const Gambar3 = ({
       ctx.drawImage(image, 158, 371, 993, 1053)
       // attribute icon
       ctx.drawImage(attributeimage, 1091, 88, 132, 132)
-      // Neglevel
-      while (iter < neglevel){
-        ctx.drawImage(neglevelimage, 133+(iter*88), 255, 75, 75)
-        iter++
+
+      // image Link arrow
+      if ( NW !== false && NW !== null) {
+        ctx.drawImage(NW, 107, 319, 255, 265)
       }
+      if ( NN !== false && NN !== null) {
+        ctx.drawImage(NN, 527, 300, 255, 265)
+      }
+      if( NE !== false && NE !== null) {
+        ctx.drawImage(NE, 1087, 319, 245, 265)
+      }
+      if( EE !== false && EE !== null) {
+        ctx.drawImage(EE, 1153, 770, 250, 260)
+      }
+      if( SE !== false && SE !== null) {
+        ctx.drawImage(SE, 1072, 1363, 252, 260)
+      }
+      if( SS !== false && SS !== null) {
+        ctx.drawImage(SS, 525, 1424, 260, 270)
+      }
+      if( SW !== false && SW !== null) {
+        ctx.drawImage(SW, 108, 1362, 245, 260)
+      }
+      if( WW !== false && WW !== null) {
+        ctx.drawImage(WW, 83, 763, 260, 270)
+      }
+
       // name font settings 
       ctx.font = "100px Times New Roman"
       ctx.textAlign = "left"
@@ -143,18 +219,23 @@ const Gambar3 = ({
       ctx.fillStyle = "black"
       ctx.fillText(effect, 100, 1600, 1100)
 
-      // attack and def
+      // attack 
       ctx.font = "bold 47px Times New Roman"
       ctx.fillStyle = "black"
       ctx.textAlign = "right"
-      ctx.fillText(attack, 950, 1887)
-      ctx.fillText(defense, 1200, 1887)
+      ctx.fillText(attack, 940, 1887)
+
+      // link arrow
+      ctx.font = " 47px vanda"
+      ctx.fillStyle = "black"
+      ctx.textAlign = "right"
+      ctx.fillText((Object.values(linkarrow).reduce((a, item) => a + item, 0)), 1200, 1887)
       
       // set1 and set2 font settings
       ctx.font = "34px Times New Roman"
       ctx.fillStyle = "black"
       ctx.textAlign = "right"
-      ctx.fillText([set1,set2].join("-"), 1170, 1490)
+      ctx.fillText([set1,set2].join("-"), 1060, 1490)
 
       // serial font settings
       ctx.font = "34px Times New Roman"
@@ -172,7 +253,7 @@ const Gambar3 = ({
       ctx.fillStyle = "black"
       ctx.textAlign = "right"
       ctx.fillText(["©",year,creator].join(" "), 1190, 1965, 520)
-    } else if ( canvas && image && backimage && attributeimage && neglevelimage && pendulum === true){
+    } else if ( canvas && image && backimage && attributeimage && NN && NE && EE && SE && SS && SW && WW && NN && pendulum === true){
       //////////////////////////////////////////////////////////////
       //////////////////////////////////////////////////////////////
       //////////////////////////////////////////////////////////////
@@ -186,11 +267,56 @@ const Gambar3 = ({
       ctx.drawImage(image, 85, 365, 1136, 895)
       // attribute icon
       ctx.drawImage(attributeimage, 1091, 88, 132, 132)
-      // Neglevel
-      while (iter < neglevel){
-        ctx.drawImage(neglevelimage, 133+(iter*88), 255, 75, 75)
-        iter++
+
+      // image Link arrow
+      if( NW !== false || NW !== null) {
+        ctx.drawImage(NW, 50, 317, 255, 265)
       }
+      if( NN !== false || NN !== null) {
+        ctx.drawImage(NN, 527, 292, 255, 265)
+      }
+      if( NE !== false || NE !== null) {
+        ctx.drawImage(NE, 1145, 317, 245, 265)
+      }
+      if( EE !== false || EE !== null) {
+        ctx.drawImage(EE, 1222, 960, 250, 265)
+      }
+      if( SE !== false || SE !== null) {
+        ctx.drawImage(SE, 1140, 1825, 252, 265)
+      }
+      if( SS !== false || SS !== null) {
+        ctx.drawImage(SS, 525, 1908, 260, 270)
+      }
+      if( SW !== false || SW !== null) {
+        ctx.drawImage(SW, 53, 1825, 245, 264)
+      }
+      if( WW !== false || WW !== null) {
+        ctx.drawImage(WW, 8, 956, 265, 270)
+      }
+
+      // name font settings 
+      ctx.font = "100px Times New Roman"
+      ctx.textAlign = "left"
+      if (rarity==="common" || rarity===""){
+        ctx.fillStyle = "white"
+        ctx.fillText(name, 97, 193, 970)
+        ctx.fillStyle = "white"
+      } else if (rarity==="silver"){
+        ctx.fillStyle = "white"
+        ctx.fillText(name, 98, 192, 970)
+        ctx.fillStyle = "black"
+        ctx.fillText(name, 102, 188, 970)
+        ctx.fillStyle = "gray"
+        ctx.fillText(name, 100, 190, 970)
+      } else if (rarity==="gold"){
+        ctx.fillStyle = "white"
+        ctx.fillText(name, 98, 192, 970)
+        ctx.fillStyle = "black"
+        ctx.fillText(name, 102, 188, 970)
+        ctx.fillStyle = "olive"
+        ctx.fillText(name, 100, 190, 970)
+      }
+
       // name font settings 
       ctx.font = "100px Times New Roman"
       ctx.textAlign = "left"
@@ -234,13 +360,18 @@ const Gambar3 = ({
       ctx.fillStyle = "black"
       ctx.fillText(effect, 100, 1645, 1100)
       
-      // attack and defense font settings
+      // attack font settings
       ctx.font = "bold 47px Times New Roman"
       ctx.fillStyle = "black"
       ctx.textAlign = "right"
-      ctx.fillText(attack, 950, 1887)
-      ctx.fillText(defense, 1200, 1887)
-      
+      ctx.fillText(attack, 940, 1887)
+
+      // link arrow
+      ctx.font = " 47px vanda"
+      ctx.fillStyle = "black"
+      ctx.textAlign = "right"
+      ctx.fillText((Object.values(linkarrow).reduce((a, item) => a + item, 0)), 1200, 1887)
+
       // set1 and set2 font settings
       ctx.font = "34px Times New Roman"
       ctx.fillStyle = "black"
@@ -278,4 +409,4 @@ const Gambar3 = ({
   )
 }
 
-export default Gambar3 
+export default Gambar4
