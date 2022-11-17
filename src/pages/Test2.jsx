@@ -1,11 +1,20 @@
-import Gambar1 from '../components/Gambar1';
+import Testgambar from '../components/Gambar4';
 import React from "react";
+// import { useState } from 'react';
 
 function Test2() {
+  // const [ test , setTest ] = useState(false)
+  // console.log(test)
+  
+  // const onChangeHandler = (event) => {
+  //   setTest(!test)
+  // }
+
   return (
-    // <Gambar1/>
     <div>
-      <input inputType="file">Ayam goreng</input>
+      <Testgambar/>
+      {/* <input type="checkbox" onChange={onChangeHandler}/> Ayam */}
+      
     </div>
   );
 }
