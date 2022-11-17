@@ -2,11 +2,60 @@ import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/js/bootstrap';
-// import { useState } from 'react';
+import  React, { useState } from 'react';
+import nextId from "react-id-generator";
+import { useDispatch } from "react-redux";
+import { __createcards } from "../redux/modules/cardsSlices";
+import axios from 'axios';
+
 
 const InputGroup = () => {
     // Aku udah buat sebagian state untuk inputnya, nanti buat redux tinggal di hilangin aja komennya
-    // const [cardtype, setCardType] = useState('link');
+    const [cardtype, setCardType] = useState('link');
+
+    const id = nextId();
+    const dispatch = useDispatch()
+
+    //State Untuk image
+    const [image, setimage] = useState('');
+
+    const onChangeImage = (event) => {
+        setimage(event.target.files[0]);
+    }
+
+    const onSubmitHandler = (event) => {
+        event.preventDefault();
+
+        // if (card.title.trim() === "" || card.category.trim() === ""  || card.description.trim() === "") return alert('Fill the Form!');
+        const data = {...cardtype, id};
+
+        // untuk upload data image
+        let formData = new FormData();
+        formData.append("image", image);
+
+        let url = "http://servercard.yudhitiarizki.my.id/upload.php";
+        axios.post(url, formData, {
+        })
+        .then(res => {
+            
+            // untuk upload data card dari state
+            console.log(res.data);
+            // data.image = res.data.url;
+            // dispatch(__createcards(data));;
+
+        })
+
+        // untuk reset data
+        // setcard({
+        // id: "0",
+        // title: "",
+        // imagelink: "",
+        // category: '',
+        // description: "",
+        // });
+        
+    };
+
 
     const cardtypeSelect = (event) => {
         // setCardType(event.target.value);
@@ -256,7 +305,7 @@ const InputGroup = () => {
                     <div className='field-label-container'>
                         <label>Picture</label>
                     </div>
-                    <input type={"file"} className='input-field upload-file' />
+                    <input type={"file"} className='input-field upload-file' onChange={(event) => onChangeImage(event)} name="image"/>
                 </div>
 
                 <div className='row-inputgroup' id='monster-type'>
@@ -326,7 +375,7 @@ const InputGroup = () => {
                         <div className='down-arrow'><i class="fa-solid fa-angle-down"></i></div>
                     </div>
 
-                    <button className='style-button'>Save</button>
+                    <button className='style-button' onClick={(event) => onSubmitHandler(event)} type='button'>Save</button>
                 </div>
 
                 <div className="image-box">
