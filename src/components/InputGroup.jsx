@@ -1,7 +1,8 @@
 import '../assets/css/InputGroup.css'
 import '../assets/css/fontawesome.css';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
+import '../scss/custom.scss';
 import { useState } from 'react';
 
 const InputGroup = () => {
@@ -332,9 +333,22 @@ const InputGroup = () => {
 
             <div className="picture-container">
                 <div className="top-pc-container">
-                    <div className="searchbox2">
-                        <input type='text' placeholder='Search my cards...' className='search2-input' />
-                        <div className='down-arrow'><i class="fa-solid fa-angle-down"></i></div>
+                    <div>
+                        <button className="searchbox2" id="dropdownMenuOffset3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,8">
+                            <input type='text' placeholder='Search my cards...' className='search2-input' />
+                            <div className='down-arrow'><i className="fa-solid fa-angle-down"></i></div>
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-custom2" aria-labelledby="dropdownMenuOffset3">
+                            <div><button className='style-button'>New Card</button></div>
+                            <li><hr className="dropdown-divider" /></li>
+                            <li><p className="dropdown-item disabled did" tabindex="-1" aria-disabled="true">Saved</p></li>
+                            <li>
+                                <button className="dropdown-item di-custom">
+                                    <div>Card 1</div>
+                                    <button className='delete-btn'><i className="fa-solid fa-trash-can"></i></button>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
 
                     <button className='style-button'>Save</button>
@@ -347,16 +361,23 @@ const InputGroup = () => {
 
                 <div className='bottom-pc-container'>
                     <div>
-                        <button className='style-button' id="dropdownMenuOffset1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="-50,5">
-                            Download <i class="fa-solid fa-angle-down"></i>
+                        <button className='style-button' id="dropdownMenuOffset1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="-50,8">
+                            Download <i className="fa-solid fa-angle-down"></i>
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset1">
-                            <li><button class="dropdown-item">Action</button></li>
-                            <li><button class="dropdown-item">Another action</button></li>
+                        <ul className="dropdown-menu dropdown-menu-custom1" aria-labelledby="dropdownMenuOffset1">
+                            <li><button className="dropdown-item"><i className="fa-solid fa-download"></i>Normal-Res</button></li>
+                            <li><button className="dropdown-item"><i className="fa-solid fa-download"></i>High-Res</button></li>
                         </ul>
                     </div>
 
-                    <button className='style-button'>Get share link <i class="fa-solid fa-angle-down"></i></button>
+                    <div>
+                        <button className='style-button' id="dropdownMenuOffset2" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="-40,8">
+                            Get share link <i className="fa-solid fa-angle-down"></i>
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-custom1" aria-labelledby="dropdownMenuOffset2">
+                            <li><span className="dropdown-item-text">Uploading...</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

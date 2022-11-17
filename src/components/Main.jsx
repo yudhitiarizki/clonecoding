@@ -73,7 +73,7 @@ const Main = () => {
                 </div>
 
                 <div>
-                    <div className='bottom-link'><i class="fa-solid fa-angle-left"></i>Go to card makers</div>
+                    <div className='bottom-link'><i className="fa-solid fa-angle-left"></i>Go to card makers</div>
                     <br />
                     <br />
                     <div className='recentlybrowsing-box'>
@@ -104,7 +104,7 @@ const Main = () => {
                                 Unread Content
                             </div>
                             <div className='right-precontent'>
-                                <i class="fa-solid fa-check"></i>
+                                <i className="fa-solid fa-check"></i>
                                 Mark site read
                             </div>
                         </div>
