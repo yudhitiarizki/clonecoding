@@ -60,3 +60,13 @@ $dropdown-bg: #2d3037;
     margin-bottom: 0;
     margin-top: 0;
 }
+
+.dropdown-menu-custom3{
+    border: none;
+    border-radius: 3px;
+    --bs-dropdown-font-size: 13px;
+    width: 220px;
+    --bs-dropdown-link-color: rgba(255, 255, 255, .7);
+    --bs-dropdown-link-hover-color: rgba(255, 255, 255, .9);
+    --bs-dropdown-link-hover-bg: rgba(255,255,255,.1);
+}

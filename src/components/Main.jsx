@@ -1,6 +1,8 @@
 import InputGroup from './InputGroup';
 import '../assets/css/style.css'
 import '../assets/css/fontawesome.css';
+import 'bootstrap/dist/js/bootstrap';
+import '../scss/custom.scss';
 
 const Main = () => {
     return (
@@ -20,13 +22,19 @@ const Main = () => {
                         <i className="fa-sharp fa-solid fa-star"></i>
                         Yugioh Card Maker
                     </div>
-                    <div className='nav-item'>
+
+                    <div className='nav-item' id="dropdownMenuOffset4" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="8,5">
                         <span className="material-symbols-outlined">
                             description
                         </span>
                         Other Makers
                         <i className="fa-solid fa-caret-down"></i>
                     </div>
+                    <ul className="dropdown-menu dropdown-menu-custom3" aria-labelledby="dropdownMenuOffset4">
+                        <li><button className="dropdown-item"><span className='M-icon'>M</span>Magic Card Maker</button></li>
+                        <li><button className="dropdown-item"><i className="fa-solid fa-file-lines"></i>Old Yugioh Card Maker</button></li>
+                    </ul>
+
                     <div className='nav-item'>
                         <i className="fa-solid fa-comments"></i>
                         Forums
@@ -35,11 +43,20 @@ const Main = () => {
                         <i className="fa-solid fa-trophy"></i>
                         Leaderboard
                     </div>
-                    <div className='nav-item'>
+
+                    <div className='nav-item' id="dropdownMenuOffset5" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="-8,5">
                         <i className="fa-solid fa-bullhorn"></i>
                         Activity
                         <i className="fa-solid fa-caret-down"></i>
                     </div>
+                    <ul className="dropdown-menu dropdown-menu-end dropdown-menu-custom3" aria-labelledby="dropdownMenuOffset5">
+                        <li><button className="dropdown-item"><i className="fa-solid fa-earth-americas"></i>All Activity</button></li>
+                        <li><button className="dropdown-item"><i className="fa-solid fa-bars"></i>My Activity Streams</button></li>
+                        <li><button className="dropdown-item"><i className="fa-regular fa-copy"></i>Unread Content</button></li>
+                        <li><button className="dropdown-item"><i className="fa-solid fa-user-plus"></i>Content I Started</button></li>
+                        <li><button className="dropdown-item"><i className="fa-solid fa-magnifying-glass"></i>Search</button></li>
+                        <li><button className="dropdown-item"><i className="fa-solid fa-square-check"></i>Our Picks</button></li>
+                    </ul>
                 </nav>
                 <div>
                     {/* Ini untuk search box */}
